@@ -1,6 +1,5 @@
 .asidebar {
   flex: 0.2; /*     this is equals to 20%       */
-  border-right: 1px solid #e1e1e1;
   height: 90vh;
   max-width: 300px;
 }
@@ -10,7 +9,7 @@
   align-items: center;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 3px;
+
   color: #606060;
 }
 
@@ -25,7 +24,7 @@
 .asidebarRow .asidebarRow__title {
   flex: 1;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -35,4 +34,24 @@
 
 .asidebarRow:hover > .asidebarRow__title {
   font-weight: bold;
+}
+
+.asidebarRow.selected {
+  background-color: lightgray;
+}
+
+.asidebarRow.selected > .asidebarRow__icon {
+  color: rgb(179, 0, 0);
+}
+
+.asidebarRow.selected > .asidebarRow__title {
+  font-weight: bold;
+}
+
+.asidebar > hr {
+  height: 1px;
+  border: 0;
+  background: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
