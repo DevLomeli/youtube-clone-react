@@ -5,7 +5,7 @@ import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 import ReplyIcon from "@material-ui/icons/Reply";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import VideoItem from "../RecommendedVideos/VideoItem";
+import VideoItem from "../VideosContainer/VideoItem";
 const VideoPage = ({ match }) => {
   const { videoId } = match.params;
   return (

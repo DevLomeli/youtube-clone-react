@@ -6,3 +6,8 @@
   position: relative;
   display: flex;
 }
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}

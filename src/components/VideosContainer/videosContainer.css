@@ -1,14 +1,14 @@
-.recommendedVideos {
+.videosContainer {
   margin-top: 5rem;
   width: 100%;
   background-color: #f9f9f9;
 }
 
-.recommendedVideos > h2 {
+.videosContainer > h2 {
   text-align: center;
 }
 
-.recommendedVideos .recommendedVideos__videos {
+.videosContainer .videosContainer__videos {
   display: flex;
   flex-direction: column;
   align-items: center;

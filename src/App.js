@@ -7,7 +7,9 @@ import SearchVideoContext from "./contexts/SearchVideoContext";
 
 import Header from "./components/Header/Header";
 import Asidebar from "./components/Asidebar/Asidebar";
-import RecommendedVideos from "./components/RecommendedVideos/RecommendedVideos";
+import Home from "./pages/Home";
+import Trending from "./pages/Trending";
+import Subscriptions from "./pages/Subscriptions";
 import SearchPage from "./components/SearchPage";
 import VideoPage from "./components/VideoPage";
 
@@ -32,9 +34,11 @@ function App() {
             <div className="app__page">
               <Asidebar />
               <Switch>
+                <Route path="/subscriptions" component={Subscriptions} />
+                <Route path="/trending" component={Trending} />
                 <Route path="/search/:searchTerm" component={SearchPage} />
                 <Route path="/video/:videoId" component={VideoPage} />
-                <Route path="/" exact component={RecommendedVideos} />
+                <Route path="/" exact component={Home} />
               </Switch>
             </div>
           </Router>
