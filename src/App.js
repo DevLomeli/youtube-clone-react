@@ -27,7 +27,7 @@ function App() {
         value={{ videos, setVideos, channels, setChannels }}
       >
         <div className="app">
-          <Router>
+          <Router basename={process.env.PUBLIC_URL}>
             <Header />
             <div className="app__page">
               <Asidebar />
