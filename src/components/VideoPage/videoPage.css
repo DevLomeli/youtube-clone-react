@@ -1,0 +1,74 @@
+.videoPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.videoPage__videoContent {
+  background-color: #e1e1e1;
+}
+
+.videoPage__firstColumn {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+.videoPage__videoWrapper {
+  width: 100%;
+  height: 60vw;
+  border: none;
+}
+
+.videoPage__video {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.videoPage__videoDescription {
+  flex: 0.1;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  padding-bottom: 0;
+}
+
+.videoPage__secondColumn {
+  margin-left: 1rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.videoPage__videoSubdescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.videoPage__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.videoPage__actions > button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+.videoPage__actions > button > :first-child {
+  margin-right: 5px;
+}
+
+.videoPage__actions > button:hover {
+  background: lightgrey;
+}

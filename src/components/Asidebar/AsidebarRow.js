@@ -1,11 +1,16 @@
 import React from "react";
-
-const AsidebarRow = ({ Icon, title, selected }) => {
+import { NavLink } from "react-router-dom";
+const AsidebarRow = ({ Icon, title, path }) => {
   return (
-    <div className={`asidebarRow ${selected && "selected"}`}>
+    <NavLink
+      to={path}
+      className="asidebarRow"
+      exact
+      activeClassName="asidebarRow--selected"
+    >
       <Icon className="asidebarRow__icon" />
       <h2 className="asidebarRow__title">{title}</h2>
-    </div>
+    </NavLink>
   );
 };
 

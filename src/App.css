@@ -3,5 +3,6 @@
 }
 
 .app__page {
+  position: relative;
   display: flex;
 }

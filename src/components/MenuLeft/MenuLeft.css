@@ -1,0 +1,20 @@
+.header__left {
+  flex: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100px;
+}
+
+.header__left > *:first-child {
+  margin-right: 0.5rem;
+}
+
+.header__left > *:first-child,
+.header__left a svg {
+  font-size: 2.5rem;
+}
+
+.header__left a svg {
+  fill: red;
+}

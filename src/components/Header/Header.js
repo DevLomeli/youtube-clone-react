@@ -1,23 +1,20 @@
 import "./Header.css";
 import React from "react";
-import MenuIcon from "@material-ui/icons/Menu";
-import YouTubeIcon from "@material-ui/icons/YouTube";
+
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 
 import Avatar from "../Avatar";
-import SearchBar from "../SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
+import MenuLeft from "../MenuLeft/MenuLeft";
 
 const Header = () => {
   return (
-    <header>
-      <div className="header__left">
-        <MenuIcon />
-        <YouTubeIcon />
-      </div>
+    <header className="header">
+      <MenuLeft />
 
-      <SearchBar className="header__searchBar" />
+      <SearchBar />
 
       <div className="header__iconsWrapper">
         <VideoCallIcon />

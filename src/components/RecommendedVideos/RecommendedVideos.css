@@ -1,25 +1,35 @@
 .recommendedVideos {
-  flex: 0.8;
-
+  margin-top: 5rem;
+  width: 100%;
   background-color: #f9f9f9;
-  padding: 40px 20px;
-  padding-bottom: 0;
 }
 
 .recommendedVideos > h2 {
-  margin-left: 5px;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 .recommendedVideos .recommendedVideos__videos {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .videoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 40px;
   width: 270px;
+  cursor: pointer;
+  padding: 10px;
+  transition: 250ms ease;
 }
+
+.videoItem:hover {
+  background-color: #e1e1e1;
+}
+
 .videoItem .videoItem__thumbnail {
   width: 250px;
   height: 140px;
