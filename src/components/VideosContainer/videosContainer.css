@@ -15,6 +15,10 @@
   justify-content: center;
 }
 
+.videosContainer .videosContainer__spinnerWrapper {
+  padding-top: 2rem;
+}
+
 .videoItem {
   display: flex;
   flex-direction: column;

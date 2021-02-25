@@ -1,7 +1,7 @@
 import "./videosContainer.css";
 import React from "react";
 import VideoItem from "./VideoItem";
-
+import CircularProgress from "@material-ui/core/CircularProgress";
 const VideosContainer = ({ titlePage, videosData }) => {
   const renderVideos = () => {
     if (videosData) {
@@ -17,7 +17,11 @@ const VideosContainer = ({ titlePage, videosData }) => {
         />
       ));
     }
-    return "Loading...";
+    return (
+      <div className="videosContainer__spinnerWrapper">
+        <CircularProgress />
+      </div>
+    );
   };
 
   return (
