@@ -3,6 +3,7 @@ import { videosTypes } from "../actions/types";
 const INIT_STATE = {
   loading: false,
   videos: [],
+  videoSelected: null,
 };
 
 const videosReducer = (state = INIT_STATE, { type, payload }) => {
@@ -10,7 +11,9 @@ const videosReducer = (state = INIT_STATE, { type, payload }) => {
     case videosTypes.LOADING:
       return { ...state, loading: true };
     case videosTypes.FETCH_VIDEOS:
-      return { videos: payload.items, loading: false };
+      return { ...state, videos: payload.items, loading: false };
+    case videosTypes.FETCH_VIDEO_SELECTED:
+      return { ...state, videoSelected: payload };
     default:
       return state;
   }

@@ -7,7 +7,7 @@ import VideosContainer from "../../components/VideosContainer";
 
 const SearchPage = (history) => {
   const { searchTerm } = history.match.params;
-  const { loading, videos } = useSelector((state) => state.videos);
+  const { videos } = useSelector((state) => state.videos);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,7 +16,6 @@ const SearchPage = (history) => {
   return (
     <section className="container">
       <VideosContainer
-        loading={loading}
         titlePage={`Videos related with ${searchTerm}`}
         videosData={videos}
       />

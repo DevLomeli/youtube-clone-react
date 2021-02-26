@@ -1,24 +1,21 @@
 import "./videosContainer.css";
 import React from "react";
-import { useSelector } from "react-redux";
 import VideoItem from "./VideoItem";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const VideosContainer = ({ titlePage, videosData }) => {
-  const { loading } = useSelector((state) => state.videos);
-
-  console.log(loading);
+const VideosContainer = ({ titlePage, videosData, loading }) => {
   const renderVideos = () => {
-    if (loading) {
+    if (loading || !videosData) {
       return (
         <div className="videosContainer__spinnerWrapper">
           <CircularProgress />
         </div>
       );
+    } else {
+      return videosData.map((item, index) => {
+        return <VideoItem key={index} videoData={item} />;
+      });
     }
-    return videosData.map((item, index) => {
-      return <VideoItem key={index} videoData={item} />;
-    });
   };
 
   return (

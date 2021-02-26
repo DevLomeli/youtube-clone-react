@@ -4,7 +4,7 @@ import VideosContainer from "../../components/VideosContainer";
 import { fetch_videos } from "../../redux/actions";
 
 const Home = () => {
-  const { loading, videos } = useSelector((state) => state.videos);
+  const { videos, loading } = useSelector((state) => state.videos);
   const dispatch = useDispatch();
 
   useEffect(() => {
