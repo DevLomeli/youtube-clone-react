@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetch_videos } from "../../redux/actions";
+
 import VideosContainer from "../../components/VideosContainer";
 
-const SearchPage = () => {
+const SearchPage = (history) => {
+  const { searchTerm } = history.match.params;
+  const { loading, videos } = useSelector((state) => state.videos);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetch_videos(searchTerm));
+  }, [dispatch, searchTerm]);
   return (
-    <div className="container">
-      <VideosContainer titlePage="Videos related with Youtube" />
-    </div>
+    <section className="container">
+      <VideosContainer
+        loading={loading}
+        titlePage={`Videos related with ${searchTerm}`}
+        videosData={videos}
+      />
+    </section>
   );
 };
 

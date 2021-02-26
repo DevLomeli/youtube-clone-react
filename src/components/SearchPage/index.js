@@ -1,32 +1,12 @@
 import "./SearchPage.css";
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
-import SearchVideoContext from "../../contexts/SearchVideoContext";
 import TuneOutlinedIcon from "@material-ui/icons/TuneOutlined";
 
 import ChannelRow from "./ChannelRow";
 import VideoRow from "./VideoRow";
-import youtubeAPI from "../../apis/youtubeAPI";
+
 const SearchPage = ({ match }) => {
-  const { videos, setVideos } = useContext(SearchVideoContext);
-  const { searchTerm } = match.params;
-
-  useEffect(() => {
-    const fetchVideos = async () => {
-      const res = await youtubeAPI.get("/search", {
-        params: {
-          q: searchTerm,
-          part: "snippet",
-          maxResult: 10,
-          type: "video",
-        },
-      });
-
-      setVideos(res.data.items);
-    };
-    fetchVideos();
-  }, [searchTerm, setVideos]);
-
   return (
     <div className="searchPage">
       <div className="searchPage__filter">

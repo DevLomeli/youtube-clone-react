@@ -1,0 +1,69 @@
+.videoPage {
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  height: 88vh;
+}
+
+.videoPage__videoContent {
+  width: 100%;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.videoPage__firstColumn {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+}
+
+.videoPage__videoWrapper {
+  flex: 0.8;
+  width: 100%;
+}
+
+.videoPage__video {
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+
+.videoPage__videoDescription {
+  flex: 0.2;
+  padding-left: 1rem;
+}
+
+.videoDescription__title {
+  font-size: 1.5rem;
+}
+
+.videoDescription__description {
+  font-size: 1.2rem;
+  color: #6a6a6a;
+}
+
+.videoDescription__actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  row-gap: 0.5rem;
+}
+
+.videoDescription__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: fit-content;
+  min-width: 90px;
+  padding: 0.5rem;
+  margin-right: 0.2rem;
+  background-color: #b8b8b8;
+}
+
+.videoPage__secondColumn {
+  flex: 0.4;
+}

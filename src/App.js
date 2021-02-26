@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Trending from "./pages/Trending";
 import Subscriptions from "./pages/Subscriptions";
 import SearchPage from "./pages/SearchPage";
-import VideoPage from "./components/VideoPage";
+import VideoPage from "./pages/VideoPage";
 
 function App() {
   const [sidebarToggle, setSidebarToggle] = useState(false);
