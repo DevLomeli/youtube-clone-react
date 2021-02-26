@@ -8,7 +8,6 @@
 }
 
 .videoPage__videoContent {
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   width: 100%;

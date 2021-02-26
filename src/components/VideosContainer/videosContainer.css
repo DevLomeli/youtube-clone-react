@@ -51,6 +51,7 @@
 .videoItem .videoItem__text > h4 {
   font-size: 14px;
   margin-bottom: 5px;
+  color: #000;
 }
 
 .videoItem .videoItem__text > p {
