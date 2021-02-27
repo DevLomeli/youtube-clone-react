@@ -23,7 +23,7 @@ function App() {
   return (
     <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
       <div className="app">
-        <Router basename={"/" || process.env.PUBLIC_URL}>
+        <Router basename={process.env.PUBLIC_URL}>
           <Header />
           <div className="app__page">
             <Asidebar />
