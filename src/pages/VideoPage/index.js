@@ -15,7 +15,6 @@ import VideosContainer from "../../components/VideosContainer";
 const VideoPage = ({ match }) => {
   const { videoId } = match.params;
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetch_video(videoId));
   }, [dispatch, videoId]);
@@ -62,7 +61,13 @@ const VideoPage = ({ match }) => {
 
   const renderVideoRelated = () => {
     if (!loading && videos) {
-      return <VideosContainer titlePage="Related" videosData={videos} />;
+      return (
+        <VideosContainer
+          titlePage="Related"
+          videosData={videos}
+          loading={loading}
+        />
+      );
     }
     return null;
   };

@@ -30,13 +30,12 @@ export const fetch_video = (id) => async (dispatch) => {
     },
   });
   const { categoryId } = data.items[0].snippet;
-
-  dispatch(fetch_videos_by_categoryId(categoryId));
-
   dispatch({
     type: videosTypes.FETCH_VIDEO_SELECTED,
     payload: data.items[0],
   });
+
+  dispatch(fetch_videos_by_categoryId(categoryId));
 };
 
 export const fetch_videos_by_categoryId = (videoCategoryId) => async (

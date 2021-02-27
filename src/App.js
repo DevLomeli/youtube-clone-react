@@ -23,15 +23,15 @@ function App() {
   return (
     <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
       <div className="app">
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename={"/" || process.env.PUBLIC_URL}>
           <Header />
           <div className="app__page">
             <Asidebar />
             <Switch>
-              <Route path="/subscriptions" component={Subscriptions} />
-              <Route path="/trending" component={Trending} />
-              <Route path="/search/:searchTerm" component={SearchPage} />
-              <Route path="/video/:videoId" component={VideoPage} />
+              <Route path="/subscriptions" exact component={Subscriptions} />
+              <Route path="/trending" exact component={Trending} />
+              <Route path="/search/:searchTerm" exact component={SearchPage} />
+              <Route path="/video/:videoId" exact component={VideoPage} />
               <Route path="/" exact component={Home} />
             </Switch>
           </div>
