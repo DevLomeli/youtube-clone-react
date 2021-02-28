@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 
 import { SidebarContext } from "../../contexts/SidebarContext";
 const AsidebarRow = ({ Icon, title, path }) => {
-  const { setSidebarToggle } = useContext(SidebarContext);
+  const { handlerToggleSidebar } = useContext(SidebarContext);
 
   const handlerOnClick = () => {
     setTimeout(() => {
-      setSidebarToggle((prevState) => !prevState);
+      handlerToggleSidebar();
     }, 250);
   };
   return (
