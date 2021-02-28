@@ -1,8 +1,8 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import SidebarContext from "./contexts/SidebarContext";
+import { SidebarProvider } from "./contexts/SidebarContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
 import Header from "./components/Header/Header";
@@ -14,16 +14,9 @@ import SearchPage from "./pages/SearchPage";
 import VideoPage from "./pages/VideoPage";
 
 function App() {
-  const [sidebarToggle, setSidebarToggle] = useState(false);
-
-  useEffect(() => {
-    sidebarToggle && (document.querySelector("body").style.overflow = "hidden");
-    !sidebarToggle && (document.querySelector("body").style.overflow = "unset");
-  }, [sidebarToggle]);
-
   return (
     <ThemeProvider>
-      <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
+      <SidebarProvider>
         <div className="app">
           <Router basename={process.env.PUBLIC_URL}>
             <Header />
@@ -43,7 +36,7 @@ function App() {
             </div>
           </Router>
         </div>
-      </SidebarContext.Provider>
+      </SidebarProvider>
     </ThemeProvider>
   );
 }

@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import Moon from "@material-ui/icons/Brightness2Rounded";
 import Sun from "@material-ui/icons/WbSunnyRounded";
 
-import SidebarContext from "../../contexts/SidebarContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 import { firstPartData, secondPartData } from "./AsidebarData";

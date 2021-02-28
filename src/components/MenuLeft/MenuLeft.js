@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 
-import SidebarContext from "../../contexts/SidebarContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 
-const MenuLeft = ({ themeOption }) => {
-  const { setSidebarToggle } = useContext(SidebarContext);
+const MenuLeft = () => {
+  const { handlerToggleSidebar } = useContext(SidebarContext);
+
   return (
     <div className="menuLeft">
-      <MenuIcon onClick={() => setSidebarToggle((value) => !value)} />
+      <MenuIcon onClick={handlerToggleSidebar} />
       <Link to="/">
         <YouTubeIcon />
       </Link>
