@@ -1,4 +1,4 @@
-.header__left {
+.menuLeft {
   flex: 0.3;
   display: flex;
   justify-content: center;
@@ -6,15 +6,15 @@
   max-width: 100px;
 }
 
-.header__left > *:first-child {
+.menuLeft > *:first-child {
   margin-right: 0.5rem;
 }
 
-.header__left > *:first-child,
-.header__left a svg {
+.menuLeft > *:first-child,
+.menuLeft a svg {
   font-size: 2.5rem;
 }
 
-.header__left a svg {
+.menuLeft a svg {
   fill: red;
 }

@@ -9,14 +9,11 @@
   width: 100%;
   height: 5rem;
   z-index: 100;
-  background-color: #fafafa;
 }
 
 .header > * {
   height: fit-content;
 }
-
-
 
 .header__searchbar {
   flex: 0.7;

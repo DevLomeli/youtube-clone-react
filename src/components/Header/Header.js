@@ -1,5 +1,7 @@
 import "./Header.css";
-import React from "react";
+import React, { useContext } from "react";
+
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -10,8 +12,10 @@ import SearchBar from "../SearchBar/SearchBar";
 import MenuLeft from "../MenuLeft/MenuLeft";
 
 const Header = () => {
+  const { bgColor } = useContext(ThemeContext);
+
   return (
-    <header className="header">
+    <header className="header" style={{ background: bgColor }}>
       <MenuLeft />
 
       <SearchBar />

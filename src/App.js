@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SidebarContext from "./contexts/SidebarContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 import Header from "./components/Header/Header";
 import Asidebar from "./components/Asidebar/Asidebar";
@@ -21,23 +22,29 @@ function App() {
   }, [sidebarToggle]);
 
   return (
-    <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
-      <div className="app">
-        <Router basename={process.env.PUBLIC_URL}>
-          <Header />
-          <div className="app__page">
-            <Asidebar />
-            <Switch>
-              <Route path="/subscriptions" exact component={Subscriptions} />
-              <Route path="/trending" exact component={Trending} />
-              <Route path="/search/:searchTerm" exact component={SearchPage} />
-              <Route path="/video/:videoId" exact component={VideoPage} />
-              <Route path="/" exact component={Home} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    </SidebarContext.Provider>
+    <ThemeProvider>
+      <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
+        <div className="app">
+          <Router basename={process.env.PUBLIC_URL}>
+            <Header />
+            <div className="app__page">
+              <Asidebar />
+              <Switch>
+                <Route path="/subscriptions" exact component={Subscriptions} />
+                <Route path="/trending" exact component={Trending} />
+                <Route
+                  path="/search/:searchTerm"
+                  exact
+                  component={SearchPage}
+                />
+                <Route path="/video/:videoId" exact component={VideoPage} />
+                <Route path="/" exact component={Home} />
+              </Switch>
+            </div>
+          </Router>
+        </div>
+      </SidebarContext.Provider>
+    </ThemeProvider>
   );
 }
 

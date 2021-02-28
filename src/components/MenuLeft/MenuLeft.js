@@ -8,10 +8,10 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 
 import SidebarContext from "../../contexts/SidebarContext";
 
-const MenuLeft = (props) => {
+const MenuLeft = ({ themeOption }) => {
   const { setSidebarToggle } = useContext(SidebarContext);
   return (
-    <div className="header__left">
+    <div className="menuLeft">
       <MenuIcon onClick={() => setSidebarToggle((value) => !value)} />
       <Link to="/">
         <YouTubeIcon />
