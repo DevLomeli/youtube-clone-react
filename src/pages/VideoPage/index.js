@@ -13,8 +13,11 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import VideosContainer from "../../components/VideosContainer";
 
 const VideoPage = ({ match }) => {
+  
   const { videoId } = match.params;
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetch_video(videoId));
   }, [dispatch, videoId]);

@@ -1,9 +1,35 @@
 import "./videosContainer.css";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+
+import { useDispatch } from "react-redux";
+import { fetchNextVideosPage } from "../../redux/actions";
+
 import VideoItem from "./VideoItem";
+
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const VideosContainer = ({ titlePage, videosData, loading }) => {
+  const loader = useRef(null);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    var options = {
+      root: null,
+      rootMargin: "50px",
+      threshold: 1.0,
+    };
+    const observer = new IntersectionObserver(handleObserver, options);
+    if (loader.current) {
+      observer.observe(loader.current);
+    }
+  }, []);
+
+  const handleObserver = (entities) => {
+    const target = entities[0];
+    if (target.isIntersecting) {
+      dispatch(fetchNextVideosPage());
+    }
+  };
+
   const renderVideos = () => {
     if (loading || !videosData) {
       return (
@@ -25,7 +51,12 @@ const VideosContainer = ({ titlePage, videosData, loading }) => {
       ) : (
         <h2 className="videosContainer__title">{titlePage}</h2>
       )}
-      <div className="videosContainer__videos">{renderVideos()}</div>
+      <div className="videosContainer__videos">
+        {renderVideos()}
+        <div ref={loader}>
+          <h2>Loading...</h2>
+        </div>
+      </div>
     </div>
   );
 };

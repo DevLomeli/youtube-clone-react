@@ -7,23 +7,23 @@ export const setLoading = () => {
 
 export const fetch_videos = (term) => async (dispatch) => {
   dispatch(setLoading());
-  const { data } = await youtubeAPI("/search", {
+  const { data } = await youtubeAPI.get("/search", {
     params: {
       q: term,
       part: "snippet",
-      maxResults: 20,
+      maxResults: 5,
       type: "video",
     },
   });
   dispatch({
     type: videosTypes.FETCH_VIDEOS,
-    payload: data,
+    payload: { data, term },
   });
 };
 
 export const fetch_video = (id) => async (dispatch) => {
   dispatch({ type: videosTypes.LOADING });
-  const { data } = await youtubeAPI("/videos", {
+  const { data } = await youtubeAPI.get("/videos", {
     params: {
       part: "snippet",
       id,
@@ -42,7 +42,7 @@ export const fetch_videos_by_categoryId = (videoCategoryId) => async (
   dispatch
 ) => {
   dispatch({ type: videosTypes.LOADING });
-  const { data } = await youtubeAPI("/videos", {
+  const { data } = await youtubeAPI.get("/videos", {
     params: {
       part: "snippet",
       chart: "mostPopular",
@@ -52,6 +52,26 @@ export const fetch_videos_by_categoryId = (videoCategoryId) => async (
 
   dispatch({
     type: videosTypes.FETCH_VIDEOS,
-    payload: data,
+    payload: { data },
+  });
+};
+
+export const fetchNextVideosPage = () => async (dispatch, getState) => {
+  const {
+    videos: { termToSearch, nextPageToken },
+  } = await getState();
+
+  const { data } = await youtubeAPI.get("/search", {
+    params: {
+      part: "snippet",
+      q: termToSearch,
+      maxResults: 5,
+      pageToken: nextPageToken,
+      type: "video",
+    },
+  });
+  dispatch({
+    type: videosTypes.FETCH_MORE_VIDEOS,
+    payload: { data },
   });
 };
