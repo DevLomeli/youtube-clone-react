@@ -1,11 +1,6 @@
 import "./App.css";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { SidebarProvider } from "./contexts/SidebarContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
