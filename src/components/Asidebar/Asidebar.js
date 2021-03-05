@@ -43,7 +43,6 @@ const Asidebar = () => {
           path={item.path}
         />
       ))}
-      <hr />
       {secondPartData.map((item) => (
         <AsidebarRow
           key={item.title}

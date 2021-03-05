@@ -12,7 +12,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <section className="container">
+    <section className="container mt-6">
       <VideosContainer
         titlePage="Recommended"
         videosData={videos}

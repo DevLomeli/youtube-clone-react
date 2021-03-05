@@ -13,8 +13,9 @@ const SearchPage = (history) => {
   useEffect(() => {
     dispatch(fetch_videos(searchTerm));
   }, [dispatch, searchTerm]);
+
   return (
-    <section className="container">
+    <section className="container mt-6">
       <VideosContainer
         titlePage={`Videos related with ${searchTerm}`}
         videosData={videos}

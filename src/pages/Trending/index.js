@@ -12,7 +12,7 @@ const Trending = () => {
   }, [dispatch]);
 
   return (
-    <section className="container">
+    <section className="container mt-6">
       <VideosContainer
         titlePage="Trending"
         loading={loading}

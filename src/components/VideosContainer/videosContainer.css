@@ -1,5 +1,4 @@
 .videosContainer {
-  margin-top: 5rem;
   width: 100%;
 }
 
@@ -61,4 +60,10 @@
 .videoItem .videoItem__avatar {
   height: 30px !important;
   width: 30px !important;
+}
+
+@media screen and (min-width: 769px) {
+  .videosContainer .videosContainer__videos {
+    flex-flow: row wrap;
+  }
 }
