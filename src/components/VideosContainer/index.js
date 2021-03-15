@@ -1,5 +1,5 @@
 import "./videosContainer.css";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, memo } from "react";
 
 import { useDispatch } from "react-redux";
 import { fetchNextVideosPage } from "../../redux/actions";

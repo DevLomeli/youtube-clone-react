@@ -11,7 +11,7 @@ export const fetch_videos = (term) => async (dispatch) => {
     params: {
       q: term,
       part: "snippet",
-      maxResults: 5,
+      maxResults: 10,
       type: "video",
     },
   });
@@ -65,7 +65,7 @@ export const fetchNextVideosPage = () => async (dispatch, getState) => {
     params: {
       part: "snippet",
       q: termToSearch,
-      maxResults: 5,
+      maxResults: 10,
       pageToken: nextPageToken,
       type: "video",
     },
