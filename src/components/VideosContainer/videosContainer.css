@@ -7,14 +7,14 @@
 
 .videosContainer > .videosContainer__title {
   text-align: center;
-  margin-bottom: 5vh;
+  margin-bottom: 1rem;
 }
 
 .videosContainer .videosContainer__videos {
   display: grid;
   grid-template-columns: repeat(1, minmax(200px, 300px));
   grid-template-rows: repeat(auto-fill, 300px);
-  row-gap: 2rem;
+  row-gap: 1rem;
 }
 
 .videosContainer .videosContainer__spinnerWrapper {
@@ -27,62 +27,74 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 250ms ease;
-  border-radius: 20px;
   overflow: hidden;
-  background-color: #e1e1e1;
+  transition: 250ms ease;
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.42);
 }
 
 .videoItem:hover {
-  filter: brightness(0.9);
+  -webkit-box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.42);
 }
 
 .videoItem .videoItem__thumbnail {
   width: 100%;
   height: 180px;
 }
+
 .videoItem .videoItem__info {
   display: flex;
-  margin: 10px 0;
-  padding: 0.5rem;
+  height: 100%;
+  padding: 10px 5px;
+}
+
+.videoItem .videoItem__avatar {
+  align-self: flex-start;
+  height: 30px !important;
+  width: 30px !important;
+  margin-right: 5px;
 }
 
 .videoItem .videoItem__text {
-  margin-left: 15px;
 }
 
 .videoItem .videoItem__text > h4 {
-  font-size: 14px;
+  font-size: 0.9rem;
   margin-bottom: 5px;
   color: #000;
 }
 
 .videoItem .videoItem__text > p {
-  font-size: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: gray;
 }
 
-.videoItem .videoItem__avatar {
-  height: 30px !important;
-  width: 30px !important;
+@media (min-width: 576px) {
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 768px) {
   .videosContainer .videosContainer__videos {
-    display: grid;
     grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(auto-fill, 300px);
-    column-gap: 2rem;
-    row-gap: 1rem;
+    column-gap: 1rem;
   }
 }
 
-@media screen and (min-width: 950px) {
+@media (min-width: 992px) {
   .videosContainer .videosContainer__videos {
-    display: grid;
     grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(auto-fill, 300px);
+    column-gap: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .videosContainer .videosContainer__videos {
+    grid-template-columns: repeat(4, 300px);
     column-gap: 2rem;
   }
 }

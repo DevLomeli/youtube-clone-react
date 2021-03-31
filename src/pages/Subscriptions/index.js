@@ -1,9 +1,11 @@
 import React from "react";
-import VideosContainer from "../../components/VideosContainer";
+
 const Subscriptions = () => {
+
+
   return (
-    <section className="container mt-6">
-      <VideosContainer titlePage="Subscriptions" />
+    <section className="container">
+      <h2>Coming soon...</h2>
     </section>
   );
 };

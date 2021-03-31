@@ -1,6 +1,5 @@
 .videoPage {
   width: 100%;
-  margin-top: 6rem;
   display: flex;
   justify-content: center;
   height: max-content;
@@ -14,14 +13,13 @@
 }
 
 .videoPage__firstColumn {
-  flex: 0.5;
+  height: 30rem;
   display: flex;
   flex-direction: column;
-  height: 28rem;
 }
 
 .videoPage__videoWrapper {
-  flex: 0.8;
+  flex: 0.6;
   width: 100%;
 }
 
@@ -32,12 +30,16 @@
 }
 
 .videoPage__videoDescription {
-  flex: 0.2;
+  flex: 0.4;
   padding-left: 1rem;
 }
 
+.videoPage__videoDescription > * {
+  margin-top: 1rem;
+}
+
 .videoDescription__title {
-  font-size: 1.5rem;
+  font-size: 5vh;
 }
 
 .videoDescription__description {
@@ -47,9 +49,9 @@
 
 .videoDescription__actions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  row-gap: 0.5rem;
+  grid-template-columns: repeat(2, 120px);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 5px;
 }
 
 .videoDescription__action {
@@ -58,22 +60,111 @@
   align-items: center;
   border: none;
   width: fit-content;
-  min-width: 90px;
+  min-width: 110px;
   padding: 0.5rem;
   margin-right: 0.2rem;
   background-color: #b8b8b8;
+  text-transform: capitalize;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+}
+
+.videoDescription__action:hover {
+  transform: scale(1.1);
 }
 
 .videoPage__secondColumn {
-  flex: 0.5;
+  height: max-content;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 400px) {
+  .videoPage__firstColumn {
+    height: 32rem;
+  }
+
+  .videoPage__videoWrapper {
+    flex: 0.6;
+  }
+
+  .videoPage__videoDescription {
+    flex: 0.4;
+  }
+  .videoDescription__action {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .videoPage__firstColumn {
     height: 40rem;
   }
 
+  .videoPage__videoWrapper {
+    flex: 0.6;
+  }
+
+  .videoPage__videoDescription {
+    flex: 0.4;
+  }
+
   .videoDescription__actions {
-    width: 50%;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .videoPage__firstColumn {
+    height: 50rem;
+  }
+
+  .videoPage__videoWrapper {
+    flex: 0.6;
+  }
+
+  .videoPage__videoDescription {
+    flex: 0.4;
+  }
+
+  .videoDescription__action {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .videoPage__videoContent {
+    width: 90%;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+
+  .videoPage__firstColumn {
+    height: 60rem;
+    flex: 0.7;
+  }
+  .videoPage__secondColumn {
+    flex: 0.3;
+  }
+
+  .videoPage__videoWrapper {
+    flex: 0.6;
+  }
+
+  .videoPage__videoDescription {
+    flex: 0.4;
+  }
+
+  .videoPage__videoContent > *:first-child {
+    margin-right: 1rem;
+  }
+
+  .videoPage .videosContainer .videosContainer__videos {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+
+  .videoItem {
+    width: 320px;
   }
 }

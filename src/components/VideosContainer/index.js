@@ -1,5 +1,5 @@
 import "./videosContainer.css";
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { useDispatch } from "react-redux";
 import { fetchNextVideosPage } from "../../redux/actions";
@@ -8,7 +8,7 @@ import VideoItem from "./VideoItem";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const VideosContainer = ({ titlePage, videosData, loading }) => {
+const VideosContainer = ({ titlePage, videosData, loading, column }) => {
   const loader = useRef(null);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -45,7 +45,7 @@ const VideosContainer = ({ titlePage, videosData, loading }) => {
   };
 
   return (
-    <div className="videosContainer">
+    <div className="videosContainer ">
       {!titlePage ? (
         ""
       ) : (

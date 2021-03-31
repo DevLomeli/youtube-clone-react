@@ -4,7 +4,6 @@ import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import HistoryIcon from "@material-ui/icons/History";
-import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
 
@@ -17,7 +16,6 @@ export const firstPartData = [
 export const secondPartData = [
   { title: "Library", icon: VideoLibraryIcon, path: "/library" },
   { title: "History", icon: HistoryIcon, path: "/history" },
-  { title: "Your videos", icon: OndemandVideoIcon, path: "/your_videos" },
   { title: "Watch Later", icon: WatchLaterIcon, path: "/watch_later" },
   {
     title: "Liked videos",

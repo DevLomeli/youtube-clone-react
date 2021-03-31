@@ -1,9 +1,14 @@
 import "./videosContainer.css";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 
+import { ThemeContext } from '../../contexts/ThemeContext'
+
 const VideoItem = ({ videoData }) => {
+
+  const { theme } = useContext(ThemeContext)
+
   const image = videoData.snippet.thumbnails.default.url;
   const channel = videoData.snippet.channelTitle;
   const title = videoData.snippet.title;
@@ -19,7 +24,7 @@ const VideoItem = ({ videoData }) => {
   };
 
   return (
-    <Link className="videoItem" to={handlerLinkTo}>
+    <Link className="videoItem" to={handlerLinkTo} style={{ background: theme === 'light' ? '#fff' : '#e1e1e1' }} >
       <img src={image} alt="" className="videoItem__thumbnail" />
       <div className="videoItem__info">
         <Avatar className="videoItem__avatar" alt={channel} />
@@ -29,7 +34,7 @@ const VideoItem = ({ videoData }) => {
           <p>'2M' {timestamp}</p>
         </div>
       </div>
-    </Link>
+    </Link >
   );
 };
 

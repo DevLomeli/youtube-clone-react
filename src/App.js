@@ -12,6 +12,10 @@ import Trending from "./pages/Trending";
 import Subscriptions from "./pages/Subscriptions";
 import SearchPage from "./pages/SearchPage";
 import VideoPage from "./pages/VideoPage";
+import LibraryPage from './pages/Library';
+import HistoryPage from './pages/History'
+import WatchLaterPage from './pages/WatchLater';
+import LikedVideosPage from './pages/LikedVideos';
 
 function App() {
   return (
@@ -31,6 +35,10 @@ function App() {
                   component={SearchPage}
                 />
                 <Route path="/video/:videoId" exact component={VideoPage} />
+                <Route path="/library" exact component={LibraryPage} />
+                <Route path="/history" exact component={HistoryPage} />
+                <Route path="/watch_later" exact component={WatchLaterPage} />
+                <Route path="/liked_videos" exact component={LikedVideosPage} />
                 <Route path="/" exact component={Home} />
               </Switch>
             </div>

@@ -21,9 +21,7 @@ const VideoPage = ({ match }) => {
     dispatch(fetch_video(videoId));
   }, [dispatch, videoId]);
 
-  const { videoSelected, loading, videos } = useSelector(
-    (state) => state.videos
-  );
+  const { videoSelected, loading, videos } = useSelector((state) => state.videos);
 
   const renderDescription = () => {
     if (!loading && videoSelected) {
@@ -68,6 +66,7 @@ const VideoPage = ({ match }) => {
           titlePage="Related"
           videosData={videos}
           loading={loading}
+          column
         />
       );
     }

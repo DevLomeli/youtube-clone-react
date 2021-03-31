@@ -49,7 +49,7 @@
 }
 
 .asidebarRow:hover {
-  background: lightgray;
+  background: rgb(165, 165, 165);
 }
 
 .asidebarRow .asidebarRow__icon {
@@ -72,7 +72,7 @@
 }
 
 .asidebarRow.asidebarRow--selected {
-  background-color: lightgray;
+  background: rgb(165, 165, 165);
 }
 
 .asidebarRow.asidebarRow--selected > .asidebarRow__icon {
