@@ -11,6 +11,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 const VideosContainer = ({ titlePage, videosData, loading, column }) => {
   const loader = useRef(null);
   const dispatch = useDispatch();
+  
   useEffect(() => {
     var options = {
       root: null,

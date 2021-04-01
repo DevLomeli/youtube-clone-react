@@ -16,6 +16,7 @@ import LibraryPage from './pages/Library';
 import HistoryPage from './pages/History'
 import WatchLaterPage from './pages/WatchLater';
 import LikedVideosPage from './pages/LikedVideos';
+import LoginPage from './pages/Login'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/history" exact component={HistoryPage} />
                 <Route path="/watch_later" exact component={WatchLaterPage} />
                 <Route path="/liked_videos" exact component={LikedVideosPage} />
+                <Route path="/login" exact component={LoginPage} />
                 <Route path="/" exact component={Home} />
               </Switch>
             </div>

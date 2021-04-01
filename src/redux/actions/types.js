@@ -4,3 +4,7 @@ export const videosTypes = {
   FETCH_VIDEO_SELECTED: "FETCH_VIDEO_SELECTED",
   FETCH_MORE_VIDEOS: "FETCH_MORE_VIDEOS",
 };
+
+export const loginTypes = {
+
+}
