@@ -6,5 +6,6 @@ export const videosTypes = {
 };
 
 export const loginTypes = {
-
+  SIGN_IN_USER: 'SIG_IN_USER',
+  LOADING: 'LOADING'
 }

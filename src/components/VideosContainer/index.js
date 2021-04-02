@@ -1,5 +1,5 @@
 import "./videosContainer.css";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 import { useDispatch } from "react-redux";
 import { fetchNextVideosPage } from "../../redux/actions";
@@ -11,7 +11,14 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 const VideosContainer = ({ titlePage, videosData, loading, column }) => {
   const loader = useRef(null);
   const dispatch = useDispatch();
-  
+
+  const handleObserver = useCallback(entities => {
+    const target = entities[0];
+    if (target.isIntersecting) {
+      dispatch(fetchNextVideosPage());
+    }
+  }, [dispatch]);
+
   useEffect(() => {
     var options = {
       root: null,
@@ -22,14 +29,9 @@ const VideosContainer = ({ titlePage, videosData, loading, column }) => {
     if (loader.current) {
       observer.observe(loader.current);
     }
-  }, []);
+  }, [handleObserver]);
 
-  const handleObserver = (entities) => {
-    const target = entities[0];
-    if (target.isIntersecting) {
-      dispatch(fetchNextVideosPage());
-    }
-  };
+
 
   const renderVideos = () => {
     if (loading || !videosData) {

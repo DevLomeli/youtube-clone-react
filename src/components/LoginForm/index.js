@@ -3,13 +3,17 @@ import './loginForm.css';
 import React from 'react';
 import { Formik } from 'formik';
 
+import { useDispatch } from "react-redux";
+import { signinWithGoogle } from '../../redux/actions';
+
 import CircularProgress from '@material-ui/core/CircularProgress';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
-const LoginForm = () => {
+const LoginForm = ({ handleSubmit }) => {
+    const dispatch = useDispatch();
     return <Formik
         initialValues={{ email: '', password: '' }}
         validate={(values) => {
@@ -24,9 +28,8 @@ const LoginForm = () => {
             return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-                setSubmitting(false);
-            }, 2000);
+            dispatch(handleSubmit(values.email, values.password));
+            setSubmitting(false);
         }}
     >
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
@@ -42,9 +45,9 @@ const LoginForm = () => {
                             {errors.password && touched.password && <FormHelperText error>{errors.password}</FormHelperText>}
                         </FormControl>
                         <Button type="submit" disabled={isSubmitting}>Enter</Button>
+                        <Button color="secondary" onClick={() => dispatch(signinWithGoogle())} >Google</Button>
                     </>
                 }
-
             </form>
         )}
     </Formik>

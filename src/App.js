@@ -1,6 +1,8 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
+import { isLogged } from './redux/actions';
 
 import { SidebarProvider } from "./contexts/SidebarContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -19,6 +21,18 @@ import LikedVideosPage from './pages/LikedVideos';
 import LoginPage from './pages/Login'
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    dispatch(isLogged());
+  }, [dispatch]);
+
+  const { loading } = useSelector(state => state.login);
+
+  console.log(loading);
+
   return (
     <ThemeProvider>
       <SidebarProvider>

@@ -6,6 +6,7 @@ import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import HistoryIcon from "@material-ui/icons/History";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 export const firstPartData = [
   { title: "Home", icon: HomeIcon, path: "/" },
@@ -22,4 +23,5 @@ export const secondPartData = [
     icon: ThumbUpAltOutlinedIcon,
     path: "/liked_videos",
   },
+  { title: "Profile", icon: AccountCircleIcon, path: "/login" }
 ];
