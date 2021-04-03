@@ -1,3 +1,3 @@
-/               /
-/trending       /trending
-/login          /login
+/               https://my-youtube-react-app.netlify.app/login
+/trending       https://my-youtube-react-app.netlify.app/trending
+/login          https://my-youtube-react-app.netlify.app/login
